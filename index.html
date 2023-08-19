@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-queries.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
             <a href="#" class="company-logo">
                 <img src="./assets/asset 1.png" alt="company logo">
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <ul class="flex">
                     <li><a href="#" class="hover-link">Products</a></li>
                     <li><a href="#" class="hover-link">Customers</a></li>
@@ -34,9 +35,12 @@
                     <li><a href="#" class="hover-link">Resources</li>
                     <li><a href="#" class="hover-link secondary-button">Sign in</a></li>
                     <li><a href="#" class="hover-link primary-button">Try for free</a></li>
-                    
+ 
                 </ul>
             </div>
+            <a href="#" class="nav-toggle hover-link" id="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </a>
         </div>
     </nav>
 
@@ -141,15 +145,16 @@
     </section>
     
     <section class="big-feature-section">
-        <div class="container flex big-feature-container">
+        <div class="container flex big-feature-container" id="feature-card2">
+            <div class="feature-image">
+                <img src="./assets/asset 21.png" alt="">
+            </div>
             <div class="feature-desc flex">
                 <h4>Effortless validation for</h4>
                 <h3>Design professionals</h3>
                 <p>Test interfaces, interaction flows, iconography and more, to help you create intuitive and delightful experiences for your users.</p>
             </div>
-            <div class="feature-image">
-                <img src="./assets/asset 21.png" alt="">
-            </div>
+           
         </div>
     </section>
 
@@ -170,7 +175,7 @@
 
     <section class="examples-section">
         <div class="container">
-            <div class="examples-header">
+            <div class="examples-header flex">
                 <h2>One platform, endless possibilities</h2>
                 <a href="#" class="secondary-button">See more examples <i class="fa-solid fa-arrow-right"></i></a>
             </div>
@@ -275,8 +280,18 @@
         </div>
     </div>
 
-
+ 
     <script src="https://kit.fontawesome.com/da3f409ba6.js" crossorigin="anonymous"></script>
+
+    <script>
+        const toggleButton = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        })
+    </script>
+
 </body>
 
 </html>
